@@ -1,0 +1,6 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ImageSource x:Key="Create">/Resource/Images/icons8_Add_User_Male_48px.png</ImageSource>
+    <ImageSource x:Key="Logo">/Resource/Images/cropped-BCS-Logo-Big-1.png</ImageSource>
+    <ImageSource x:Key="View">/Resource/Images/User_Account_48px.png</ImageSource>
+</ResourceDictionary>

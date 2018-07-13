@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="BCSDirectory.Workspace.WorkspaceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BCSDirectory.Workspace"
+             xmlns:login="clr-namespace:BCSDirectory.Login"
+             xmlns:bcsDirectory="clr-namespace:BCSDirectory"
+             xmlns:users="clr-namespace:BCSDirectory.Users"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ScrollViewer Background="{StaticResource SecondaryBrush}" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <ItemsControl ItemsSource="{Binding Pages}">
+                    <ItemsControl.Resources>
+                        <DataTemplate DataType="{x:Type bcsDirectory:WorkspacePage}">
+                            <Button Content="{Binding Title}" bcsDirectory:AttachedProperties.MenuIcon="{Binding IconName, Converter={StaticResource StringToImageConverter}}"  Command="{Binding GotoPageCommand}" Style="{StaticResource Menu}"/>
+                        </DataTemplate>
+                    </ItemsControl.Resources>
+                </ItemsControl>
+            </StackPanel>
+        </ScrollViewer>
+        <ContentControl Grid.Column="1" Content="{Binding TargetPage, UpdateSourceTrigger=PropertyChanged}">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type users:AddEditUserViewModel}">
+                    <users:AddEditUserView/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type users:UsersViewModel}">
+                    <users:UsersView/>
+                </DataTemplate>
+            </ContentControl.Resources>
+        </ContentControl>
+    </Grid>
+</UserControl>

@@ -54,20 +54,48 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="AttachedProperties.cs" />
+    <Compile Include="BaseInpc.cs" />
+    <Compile Include="Converter\StringToImageConverter.cs" />
+    <Compile Include="DelegateCommand.cs" />
+    <Compile Include="Login\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Login\LoginViewModel.cs" />
+    <Compile Include="Model\CivilStatus.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Page.cs" />
+    <Compile Include="Users\AddEditUserView.xaml.cs">
+      <DependentUpon>AddEditUserView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Users\AddEditUserViewModel.cs" />
+    <Compile Include="Users\UsersView.xaml.cs">
+      <DependentUpon>UsersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Users\UsersViewModel.cs" />
+    <Compile Include="Users\UserView.xaml.cs">
+      <DependentUpon>UserView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Users\UserViewModel.cs" />
+    <Compile Include="ViewModelLocator.cs" />
+    <Compile Include="WorkspacePage.cs" />
+    <Compile Include="Workspace\WorkspaceView.xaml.cs">
+      <DependentUpon>WorkspaceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\WorkspaceViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainWindow\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow\MainWindowViewModel.cs" />
+    <Compile Include="Model\Gender.cs" />
+    <Compile Include="Model\Information.cs" />
+    <Compile Include="Model\UserType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -89,9 +117,86 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resource\Fonts\Exo2-Black.ttf" />
+    <Resource Include="Resource\Fonts\Exo2-BlackItalic.ttf" />
+    <Resource Include="Resource\Fonts\Exo2-Bold.ttf" />
+    <Resource Include="Resource\Fonts\Exo2-BoldItalic.ttf" />
+    <Resource Include="Resource\Fonts\Exo2-ExtraBold.ttf" />
+    <Resource Include="Resource\Fonts\Exo2-ExtraBoldItalic.ttf" />
+    <Resource Include="Resource\Fonts\Exo2-ExtraLight.ttf" />
+    <Resource Include="Resource\Fonts\Exo2-ExtraLightItalic.ttf" />
+    <Resource Include="Resource\Fonts\Exo2-Italic.ttf" />
+    <Resource Include="Resource\Fonts\Exo2-Light.ttf" />
+    <Resource Include="Resource\Fonts\Exo2-LightItalic.ttf" />
+    <Resource Include="Resource\Fonts\Exo2-Medium.ttf" />
+    <Resource Include="Resource\Fonts\Exo2-MediumItalic.ttf" />
+    <Resource Include="Resource\Fonts\Exo2-Regular.ttf" />
+    <Resource Include="Resource\Fonts\Exo2-SemiBold.ttf" />
+    <Resource Include="Resource\Fonts\Exo2-SemiBoldItalic.ttf" />
+    <Resource Include="Resource\Fonts\Exo2-Thin.ttf" />
+    <Resource Include="Resource\Fonts\Exo2-ThinItalic.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Login\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Converters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Fonts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Images.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\MenuStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Users\AddEditUserView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Users\UsersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Users\UserView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\WorkspaceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resource\Images\cropped-BCS-Logo-Big-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Fonts\OFL.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\icons8_Add_User_Male_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\User_Account_48px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
