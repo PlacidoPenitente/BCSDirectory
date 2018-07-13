@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="AttachedProperties.cs" />
     <Compile Include="BaseInpc.cs" />
+    <Compile Include="Converter\PositiveToNegativeConverter.cs" />
     <Compile Include="Converter\StringToImageConverter.cs" />
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="Login\LoginView.xaml.cs">
@@ -185,7 +186,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resource\Images\service-bottom-banner-1.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\Images\cropped-BCS-Logo-Big-1.png" />
   </ItemGroup>
@@ -197,6 +200,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\Images\User_Account_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\back.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

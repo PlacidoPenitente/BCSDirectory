@@ -2,4 +2,5 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:converter="clr-namespace:BCSDirectory.Converter">
     <converter:StringToImageConverter x:Key="StringToImageConverter"/>
+    <converter:PositiveToNegativeConverter x:Key="PositiveToNegativeConverter"/>
 </ResourceDictionary>

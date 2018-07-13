@@ -14,12 +14,16 @@
             <ColumnDefinition Width="250"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <ScrollViewer Background="{StaticResource SecondaryBrush}" VerticalScrollBarVisibility="Auto">
+        <Image Grid.Column="0" Grid.ColumnSpan="2" Source="{StaticResource Background}" Stretch="Uniform" HorizontalAlignment="Left"/>
+        <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto">
+            <ScrollViewer.Background>
+                <SolidColorBrush Color="{StaticResource SecondaryColor}" Opacity="0.8"/>
+            </ScrollViewer.Background>
             <StackPanel>
                 <ItemsControl ItemsSource="{Binding Pages}">
                     <ItemsControl.Resources>
                         <DataTemplate DataType="{x:Type bcsDirectory:WorkspacePage}">
-                            <Button Content="{Binding Title}" bcsDirectory:AttachedProperties.MenuIcon="{Binding IconName, Converter={StaticResource StringToImageConverter}}"  Command="{Binding GotoPageCommand}" Style="{StaticResource Menu}"/>
+                            <RadioButton GroupName="Menu" Content="{Binding Title}" bcsDirectory:AttachedProperties.MenuIcon="{Binding IconName, Converter={StaticResource StringToImageConverter}}"  Command="{Binding GotoPageCommand}" Style="{StaticResource Menu}"/>
                         </DataTemplate>
                     </ItemsControl.Resources>
                 </ItemsControl>

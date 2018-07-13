@@ -31,8 +31,11 @@ namespace BCSDirectory.Workspace
             get => _targetPage;
             set
             {
-                _targetPage = value;
-                OnPropertyChanged();
+                if (_targetPage != value)
+                {
+                    _targetPage = value;
+                    OnPropertyChanged();
+                }
             }
         }
 

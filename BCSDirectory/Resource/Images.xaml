@@ -3,4 +3,6 @@
     <ImageSource x:Key="Create">/Resource/Images/icons8_Add_User_Male_48px.png</ImageSource>
     <ImageSource x:Key="Logo">/Resource/Images/cropped-BCS-Logo-Big-1.png</ImageSource>
     <ImageSource x:Key="View">/Resource/Images/User_Account_48px.png</ImageSource>
+    <ImageSource x:Key="BannerBackground">/Resource/Images/service-bottom-banner-1.png</ImageSource>
+    <ImageSource x:Key="Background">/Resource/Images/back.png</ImageSource>
 </ResourceDictionary>
