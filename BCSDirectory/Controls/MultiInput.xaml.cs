@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -51,7 +52,7 @@ namespace BCSDirectory.Controls
             if (e.Key == Key.Enter)
             {
                 var items = GetItems(this);
-                if (!items.Any(x => x.ToLower().Trim().Equals(((TextBox)sender).Text.ToLower()))) items.Add(((TextBox)sender).Text);
+                if (!items.Any(x => x.ToLower().Trim().Equals(((TextBox)sender).Text.ToLower()))) if (!String.IsNullOrEmpty(((TextBox)sender).Text)) items.Add(((TextBox)sender).Text);
                 SetItems(this, items);
                 ((TextBox)sender).Text = "";
             }
