@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace BCSDirectory.Model
 {
@@ -13,7 +13,7 @@ namespace BCSDirectory.Model
         public Gender Gender { get; set; }
         public DateTime Birthdate { get; set; }
         public string Address { get; set; }
-        public List<string> HobbiesAndInterests { get; set; }
+        public ObservableCollection<string> HobbiesAndInterests { get; set; } = new ObservableCollection<string>();
         public CivilStatus CivilStatus { get; set; }
         public UserType UserType { get; set; }
     }

@@ -89,9 +89,20 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <Grid>
-        <Border>
-            <ListView ItemsSource="{Binding Items}" Style="{StaticResource ListViewStyle1}"/>
+    <Grid x:Name="Root">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0">
+            <Label FontSize="14" FontFamily="{StaticResource Exo2Regular}" Padding="0" Content="{Binding Label}" Margin="0,0,0,5">
+                <Label.Foreground>
+                    <SolidColorBrush x:Name="TextBoxForeground" Color="{StaticResource SecondaryColor}"/>
+                </Label.Foreground>
+            </Label>
+        </Border>
+        <Border Grid.Row="1">
+            <ListView ItemsSource="{Binding Path=Items}" Style="{StaticResource ListViewStyle1}"/>
         </Border>
     </Grid>
 </UserControl>

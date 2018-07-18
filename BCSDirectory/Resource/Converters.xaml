@@ -4,4 +4,7 @@
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     <converter:StringToImageConverter x:Key="StringToImageConverter"/>
     <converter:PositiveToNegativeConverter x:Key="PositiveToNegativeConverter"/>
+    <converter:StringToGenderConverter x:Key="StringToGenderConverter"/>
+    <converter:StringToCivilStatusConverter x:Key="StringToCivilStatusConverter"/>
+    <converter:StringToUserTypeConverter x:Key="StringToUserTypeConverter"/>
 </ResourceDictionary>

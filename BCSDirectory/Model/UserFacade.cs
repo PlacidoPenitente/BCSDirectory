@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace BCSDirectory.Model
 {
@@ -128,7 +128,7 @@ namespace BCSDirectory.Model
 
         #region HobbiesAndInterestsProperty
 
-        public List<string> HobbiesAndInterests
+        public ObservableCollection<string> HobbiesAndInterests
         {
             get => User.HobbiesAndInterests;
             set

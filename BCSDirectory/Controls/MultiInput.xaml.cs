@@ -15,54 +15,45 @@ namespace BCSDirectory.Controls
         public MultiInput()
         {
             InitializeComponent();
+            Root.DataContext = this;
         }
 
-        public static void SetItems(DependencyObject dependencyObject, ObservableCollection<string> value)
+        public ObservableCollection<string> Items
         {
-            dependencyObject.SetValue(ItemsProperty, value);
-        }
-
-        public static ObservableCollection<string> GetItems(DependencyObject dependencyObject)
-        {
-            return (ObservableCollection<string>)dependencyObject.GetValue(ItemsProperty);
+            get => (ObservableCollection<string>)GetValue(ItemsProperty);
+            set => SetValue(ItemsProperty, value);
         }
 
         // Using a DependencyProperty as the backing store for Items.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ItemsProperty =
-            DependencyProperty.RegisterAttached("Items", typeof(ObservableCollection<string>), typeof(MultiInput),
-                new PropertyMetadata(null));
+            DependencyProperty.Register("Items", typeof(ObservableCollection<string>), typeof(MultiInput), new PropertyMetadata(null));
 
-        public static void SetLabelText(DependencyObject dependencyObject, string value)
+
+
+        public string Label
         {
-            dependencyObject.SetValue(LabelTextProperty, value);
+            get => (string)GetValue(LabelProperty);
+            set => SetValue(LabelProperty, value);
         }
 
-        public static string GetLabelText(DependencyObject dependencyObject)
-        {
-            return (string)dependencyObject.GetValue(LabelTextProperty);
-        }
+        // Using a DependencyProperty as the backing store for Label.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty LabelProperty =
+            DependencyProperty.Register("Label", typeof(string), typeof(MultiInput), new PropertyMetadata(null));
 
-        // Using a DependencyProperty as the backing store for LabelText.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty LabelTextProperty =
-            DependencyProperty.RegisterAttached("LabelText", typeof(string), typeof(MultiInput),
-                new PropertyMetadata(null));
+
 
         private void EnterValue(object sender, System.Windows.Input.KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                var items = GetItems(this);
-                if (!items.Any(x => x.ToLower().Trim().Equals(((TextBox)sender).Text.ToLower()))) if (!String.IsNullOrEmpty(((TextBox)sender).Text)) items.Add(((TextBox)sender).Text);
-                SetItems(this, items);
+                if (!Items.Any(x => x.ToLower().Trim().Equals(((TextBox)sender).Text.ToLower()))) if (!String.IsNullOrEmpty(((TextBox)sender).Text)) Items.Add(((TextBox)sender).Text);
                 ((TextBox)sender).Text = "";
             }
         }
 
         private void RemoveItem(object sender, RoutedEventArgs e)
         {
-            var items = GetItems(this);
-            items.Remove(((Button)sender).Content.ToString());
-            SetItems(this, items);
+            Items.Remove(((Button)sender).Content.ToString());
         }
     }
 }
