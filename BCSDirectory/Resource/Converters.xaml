@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:converter="clr-namespace:BCSDirectory.Converter">
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     <converter:StringToImageConverter x:Key="StringToImageConverter"/>
     <converter:PositiveToNegativeConverter x:Key="PositiveToNegativeConverter"/>
 </ResourceDictionary>

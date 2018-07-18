@@ -14,7 +14,7 @@
             <ColumnDefinition Width="250"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Image Grid.Column="0" Grid.ColumnSpan="2" Source="{StaticResource Background}" Stretch="Uniform" HorizontalAlignment="Left"/>
+        <Image Grid.Column="0" Grid.ColumnSpan="2" Source="{StaticResource Background}" Stretch="UniformToFill" HorizontalAlignment="Left"/>
         <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto">
             <ScrollViewer.Background>
                 <SolidColorBrush Color="{StaticResource SecondaryColor}" Opacity="0.8"/>

@@ -2,4 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <FontFamily x:Key="Exo2Regular">pack://application:,,,/Resource/Fonts/Exo2-Regular.ttf#Exo 2</FontFamily>
     <FontFamily x:Key="Exo2Bold">pack://application:,,,/Resource/Fonts/Exo2-Bold.ttf#Exo 2</FontFamily>
+    <FontFamily x:Key="Exo2Light">pack://application:,,,/Resource/Fonts/Exo2-Light.ttf#Exo 2</FontFamily>
+    <FontFamily x:Key="FontAwesome">pack://application:,,,/Resource/Fonts/fontawesome-webfont.ttf#FontAwesome</FontFamily>
 </ResourceDictionary>

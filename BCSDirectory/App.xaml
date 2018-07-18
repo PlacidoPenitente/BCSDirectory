@@ -6,11 +6,15 @@
     <Application.Resources>
          <ResourceDictionary>
              <ResourceDictionary.MergedDictionaries>
-                 <ResourceDictionary Source="Resource/Colors.xaml"/>
-                 <ResourceDictionary Source="Resource/Images.xaml"/>
-                 <ResourceDictionary Source="Resource/Fonts.xaml"/>
-                 <ResourceDictionary Source="Resource/MenuStyle.xaml"/>
-                 <ResourceDictionary Source="Resource/Converters.xaml"/>
+                <ResourceDictionary Source="Resource/EnUsLang.xaml"/>
+                <ResourceDictionary Source="Resource/Colors.xaml"/>
+                <ResourceDictionary Source="Resource/Images.xaml"/>
+                <ResourceDictionary Source="Resource/Fonts.xaml"/>
+                <ResourceDictionary Source="Resource/Converters.xaml"/>
+                <ResourceDictionary Source="Resource/MenuStyle.xaml"/>
+                <ResourceDictionary Source="Resource/TextBoxStyle.xaml"/>
+                <ResourceDictionary Source="Resource/ComboBoxStyle.xaml"/>
+                <ResourceDictionary Source="Resource/ButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
          </ResourceDictionary>
     </Application.Resources>

@@ -20,5 +20,21 @@ namespace BCSDirectory
             DependencyProperty.RegisterAttached("MenuIcon", typeof(ImageSource), typeof(AttachedProperties), new PropertyMetadata(new ImageBrush().ImageSource));
 
 
+        public static void SetLabel(DependencyObject dependencyObject,
+            string value)
+        {
+            dependencyObject.SetValue(LabelProperty, value);
+        }
+
+        public static string GetLabel(DependencyObject dependencyObject)
+        {
+            return (string)dependencyObject.GetValue(LabelProperty);
+        }
+
+        // Using a DependencyProperty as the backing store for Label.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty LabelProperty =
+            DependencyProperty.RegisterAttached("Label", typeof(string), typeof(AttachedProperties),
+                new PropertyMetadata(""));
+
     }
 }

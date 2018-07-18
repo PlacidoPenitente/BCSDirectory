@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -60,6 +61,9 @@
     </Compile>
     <Compile Include="AttachedProperties.cs" />
     <Compile Include="BaseInpc.cs" />
+    <Compile Include="Controls\MultiInput.xaml.cs">
+      <DependentUpon>MultiInput.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converter\PositiveToNegativeConverter.cs" />
     <Compile Include="Converter\StringToImageConverter.cs" />
     <Compile Include="DelegateCommand.cs" />
@@ -118,6 +122,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resource\Fonts\fontawesome-webfont.ttf" />
     <Resource Include="Resource\Fonts\Exo2-Black.ttf" />
     <Resource Include="Resource\Fonts\Exo2-BlackItalic.ttf" />
     <Resource Include="Resource\Fonts\Exo2-Bold.ttf" />
@@ -141,6 +146,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\MultiInput.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Login\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -149,11 +158,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resource\ButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resource\Colors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resource\ComboBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resource\Converters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\EnUsLang.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -166,6 +187,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resource\MenuStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\TextBoxStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -203,6 +228,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\Images\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\Expand_Arrow_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
