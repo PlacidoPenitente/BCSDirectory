@@ -128,12 +128,12 @@ namespace BCSDirectory.Model
 
         #region HobbiesAndInterestsProperty
 
-        public ObservableCollection<string> HobbiesAndInterests
+        public ObservableCollection<Hobby> HobbiesAndInterests
         {
-            get => User.HobbiesAndInterests;
+            get => User.Hobbies;
             set
             {
-                User.HobbiesAndInterests = value;
+                User.Hobbies = value;
                 OnPropertyChanged();
             }
         }

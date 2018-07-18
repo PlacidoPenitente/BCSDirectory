@@ -78,6 +78,7 @@
     </Compile>
     <Compile Include="Login\LoginViewModel.cs" />
     <Compile Include="Model\CivilStatus.cs" />
+    <Compile Include="Model\Hobby.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\UserFacade.cs" />
     <Compile Include="Page.cs" />

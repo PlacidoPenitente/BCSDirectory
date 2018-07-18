@@ -1,8 +1,10 @@
-﻿using BCSDirectory.Model;
+﻿using System;
+using BCSDirectory.Model;
 using BCSDirectory.Workspace;
 using Newtonsoft.Json;
-using System;
 using System.Collections.ObjectModel;
+using System.IO;
+using System.Net;
 
 namespace BCSDirectory.Users
 {
@@ -13,6 +15,22 @@ namespace BCSDirectory.Users
         public UserFacade User { get; set; }
 
         public DelegateCommand SaveCommand { get; set; }
+
+        #region ItemsProperty
+
+        private ObservableCollection<string> _items;
+
+        public ObservableCollection<string> Items
+        {
+            get => _items;
+            set
+            {
+                _items = value;
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion
 
         #region MonthProperty
 
@@ -62,30 +80,14 @@ namespace BCSDirectory.Users
 
         #endregion
 
-        #region ItemsProperty
-
-        private ObservableCollection<string> _items;
-
-        public ObservableCollection<string> Items
-        {
-            get => _items;
-            set
-            {
-                _items = value;
-                OnPropertyChanged();
-            }
-        }
-
-        #endregion
-
         public AddEditUserViewModel(User user, WorkspaceViewModel workspaceViewModel)
         {
-            Items = new ObservableCollection<string> { "Biking" };
             _workspaceViewModel = workspaceViewModel;
             Title = "New User";
             IconName = "Create";
 
             User = new UserFacade(new User());
+            Items = new ObservableCollection<string>();
             SaveCommand = new DelegateCommand(Save);
         }
 
@@ -96,8 +98,23 @@ namespace BCSDirectory.Users
 
         private void Save()
         {
-            Console.WriteLine(JsonConvert.SerializeObject(User));
+            foreach (var hobbyName in Items)
+            {
+                User.HobbiesAndInterests.Add(new Hobby() { Name = hobbyName });
+            }
 
+            var jsonString = JsonConvert.SerializeObject(User.User);
+            var request = (HttpWebRequest)WebRequest.Create("https://dotjayapi.conveyor.cloud/api/user");
+            request.Method = "Post";
+            request.ContentType = "Application/Json";
+            request.ContentLength = jsonString.Length;
+            using (var writer = new StreamWriter(request.GetRequestStream()))
+            {
+                writer.Write(jsonString);
+            }
+
+            var response = (HttpWebResponse)request.GetResponse();
+            Console.WriteLine(response);
         }
     }
 }

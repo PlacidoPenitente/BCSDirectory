@@ -11,9 +11,9 @@ namespace BCSDirectory.Model
         public string MiddleName { get; set; }
         public string PhoneNumber { get; set; }
         public Gender Gender { get; set; }
-        public DateTime Birthdate { get; set; }
+        public DateTime Birthdate { get; set; } = DateTime.Now;
         public string Address { get; set; }
-        public ObservableCollection<string> HobbiesAndInterests { get; set; } = new ObservableCollection<string>();
+        public ObservableCollection<Hobby> Hobbies { get; set; } = new ObservableCollection<Hobby>();
         public CivilStatus CivilStatus { get; set; }
         public UserType UserType { get; set; }
     }

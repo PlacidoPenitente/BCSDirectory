@@ -119,7 +119,7 @@
                         <ComboBoxItem Content="Single"/>
                         <ComboBoxItem Content="Married"/>
                     </ComboBox>
-                    <controls:MultiInput Margin="10" Label="{StaticResource HobbiesAndInterests}" Items="{Binding User.HobbiesAndInterests}"/>
+                    <controls:MultiInput Margin="10" Label="{StaticResource HobbiesAndInterests}" Items="{Binding Items}"/>
                     <ComboBox SelectedValuePath="Content" Style="{StaticResource ComboBox}" bcsDirectory:AttachedProperties.Label="{StaticResource UserType}" Margin="10" SelectedIndex="0" SelectedValue="{Binding User.UserType, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource StringToUserTypeConverter}}">
                         <ComboBoxItem Content="Viewer"/>
                         <ComboBoxItem Content="Employee"/>
