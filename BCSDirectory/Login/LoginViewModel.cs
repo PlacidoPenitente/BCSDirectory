@@ -1,4 +1,4 @@
-﻿using BCSDirectory.Model;
+﻿using BCSDirectory.Models;
 
 namespace BCSDirectory.Login
 {

@@ -241,5 +241,11 @@
   <ItemGroup>
     <Resource Include="Resource\Images\Expand_Arrow_32px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BCSDirectory.Models\BCSDirectory.Models.csproj">
+      <Project>{D29299C4-D0A7-4B8D-9EF7-9CB1B1767759}</Project>
+      <Name>BCSDirectory.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

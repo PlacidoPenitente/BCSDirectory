@@ -1,4 +1,4 @@
-﻿using BCSDirectory.Model;
+﻿using BCSDirectory.Models;
 using System;
 using System.Globalization;
 using System.Windows.Data;

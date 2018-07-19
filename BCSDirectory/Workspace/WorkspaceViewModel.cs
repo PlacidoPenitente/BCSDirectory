@@ -1,4 +1,4 @@
-﻿using BCSDirectory.Model;
+﻿using BCSDirectory.Models;
 using BCSDirectory.Users;
 using System.Collections.Generic;
 

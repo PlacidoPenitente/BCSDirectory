@@ -1,18 +1,12 @@
-﻿using System;
-using BCSDirectory.Model;
+﻿using BCSDirectory.Models;
 using BCSDirectory.Workspace;
-using Newtonsoft.Json;
 using System.Collections.ObjectModel;
-using System.IO;
-using System.Net;
 
 namespace BCSDirectory.Users
 {
     public class AddEditUserViewModel : WorkspacePage
     {
         private readonly WorkspaceViewModel _workspaceViewModel;
-
-        public UserFacade User { get; set; }
 
         public DelegateCommand SaveCommand { get; set; }
 
@@ -86,7 +80,6 @@ namespace BCSDirectory.Users
             Title = "New User";
             IconName = "Create";
 
-            User = new UserFacade(new User());
             Items = new ObservableCollection<string>();
             SaveCommand = new DelegateCommand(Save);
         }
@@ -98,23 +91,7 @@ namespace BCSDirectory.Users
 
         private void Save()
         {
-            foreach (var hobbyName in Items)
-            {
-                User.HobbiesAndInterests.Add(new Hobby() { Name = hobbyName });
-            }
 
-            var jsonString = JsonConvert.SerializeObject(User.User);
-            var request = (HttpWebRequest)WebRequest.Create("https://dotjayapi.conveyor.cloud/api/user");
-            request.Method = "Post";
-            request.ContentType = "Application/Json";
-            request.ContentLength = jsonString.Length;
-            using (var writer = new StreamWriter(request.GetRequestStream()))
-            {
-                writer.Write(jsonString);
-            }
-
-            var response = (HttpWebResponse)request.GetResponse();
-            Console.WriteLine(response.StatusDescription);
         }
     }
 }
