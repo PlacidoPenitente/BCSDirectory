@@ -114,7 +114,7 @@ namespace BCSDirectory.Users
             }
 
             var response = (HttpWebResponse)request.GetResponse();
-            Console.WriteLine(response);
+            Console.WriteLine(response.StatusDescription);
         }
     }
 }
