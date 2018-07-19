@@ -1,7 +1,8 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using BCSDirectory.Model;
+using System;
+using System.Collections.Generic;
 
-namespace BCSDirectory.Model
+namespace BCSDirectory.Models
 {
     public class User
     {
@@ -13,7 +14,7 @@ namespace BCSDirectory.Model
         public Gender Gender { get; set; }
         public DateTime Birthdate { get; set; } = DateTime.Now;
         public string Address { get; set; }
-        public ObservableCollection<Hobby> Hobbies { get; set; } = new ObservableCollection<Hobby>();
+        public List<Hobby> Hobbies { get; set; } = new List<Hobby>();
         public CivilStatus CivilStatus { get; set; }
         public UserType UserType { get; set; }
     }

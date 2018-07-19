@@ -84,10 +84,6 @@
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Login\LoginViewModel.cs" />
-    <Compile Include="Model\CivilStatus.cs" />
-    <Compile Include="Model\Hobby.cs" />
-    <Compile Include="Model\User.cs" />
-    <Compile Include="Model\UserFacade.cs" />
     <Compile Include="Page.cs" />
     <Compile Include="Users\AddEditUserView.xaml.cs">
       <DependentUpon>AddEditUserView.xaml</DependentUpon>
@@ -113,9 +109,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow\MainWindowViewModel.cs" />
-    <Compile Include="Model\Gender.cs" />
-    <Compile Include="Model\Information.cs" />
-    <Compile Include="Model\UserType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
