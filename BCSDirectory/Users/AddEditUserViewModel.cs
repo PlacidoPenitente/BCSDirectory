@@ -1,4 +1,4 @@
-﻿using BCSDirectory.Models;
+﻿using BCSDirectory.Model;
 using BCSDirectory.Workspace;
 using System.Collections.ObjectModel;
 
@@ -9,6 +9,22 @@ namespace BCSDirectory.Users
         private readonly WorkspaceViewModel _workspaceViewModel;
 
         public DelegateCommand SaveCommand { get; set; }
+
+        #region UserProperty
+
+        private UserFacade _user;
+
+        public UserFacade User
+        {
+            get => _user;
+            set
+            {
+                _user = value;
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion
 
         #region ItemsProperty
 
@@ -74,12 +90,13 @@ namespace BCSDirectory.Users
 
         #endregion
 
-        public AddEditUserViewModel(User user, WorkspaceViewModel workspaceViewModel)
+        public AddEditUserViewModel(UserFacade userFacade, WorkspaceViewModel workspaceViewModel)
         {
             _workspaceViewModel = workspaceViewModel;
             Title = "New User";
             IconName = "Create";
 
+            User = userFacade;
             Items = new ObservableCollection<string>();
             SaveCommand = new DelegateCommand(Save);
         }

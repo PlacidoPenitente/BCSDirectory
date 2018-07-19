@@ -1,4 +1,5 @@
-﻿using BCSDirectory.Models;
+﻿using BCSDirectory.Model;
+using BCSDirectory.Models;
 using BCSDirectory.Users;
 using System.Collections.Generic;
 
@@ -41,11 +42,17 @@ namespace BCSDirectory.Workspace
 
         #endregion
 
+        public User User { get; set; }
+        public UserFacade UserFacade { get; set; }
+
         public WorkspaceViewModel()
         {
+            User = new User();
+            UserFacade = new UserFacade(User);
+
             Pages = new List<WorkspacePage>()
             {
-                new AddEditUserViewModel(new User(), this),
+                new AddEditUserViewModel(UserFacade, this),
                 new UsersViewModel(this)
             };
         }
