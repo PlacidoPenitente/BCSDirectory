@@ -1,4 +1,4 @@
-﻿namespace BCSDirectory.Models
+﻿namespace BCSDirectory.Models.Enums
 {
     public enum Gender
     {

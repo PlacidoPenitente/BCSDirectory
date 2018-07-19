@@ -1,4 +1,5 @@
 ﻿using BCSDirectory.Models;
+using BCSDirectory.Models.Enums;
 using System;
 using System.Globalization;
 using System.Windows.Data;
