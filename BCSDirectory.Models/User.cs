@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BCSDirectory.Models.Enums;
+using System;
 using System.Collections.Generic;
 
 namespace BCSDirectory.Models
