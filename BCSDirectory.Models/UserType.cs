@@ -1,4 +1,4 @@
-﻿namespace BCSDirectory.Model
+﻿namespace BCSDirectory.Models
 {
     public enum UserType
     {
