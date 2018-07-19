@@ -71,6 +71,9 @@
     </Compile>
     <Compile Include="AttachedProperties.cs" />
     <Compile Include="BaseInpc.cs" />
+    <Compile Include="Controls\DatePicker.xaml.cs">
+      <DependentUpon>DatePicker.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\MultiInput.xaml.cs">
       <DependentUpon>MultiInput.xaml</DependentUpon>
     </Compile>
@@ -156,6 +159,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\DatePicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\MultiInput.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

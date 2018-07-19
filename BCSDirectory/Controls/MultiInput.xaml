@@ -21,7 +21,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ListView}">
                         <Grid>
-                            <Border BorderBrush="{StaticResource SecondaryBrush}" BorderThickness="2">
+                            <Border BorderBrush="{Binding ElementName=BorderColor}" BorderThickness="2">
                                 <Grid Focusable="false">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"/>
@@ -89,20 +89,48 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <Grid x:Name="Root">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <Border Grid.Row="0">
-            <Label FontSize="14" FontFamily="{StaticResource Exo2Regular}" Padding="0" Content="{Binding Label}" Margin="0,0,0,5">
-                <Label.Foreground>
-                    <SolidColorBrush x:Name="TextBoxForeground" Color="{StaticResource SecondaryColor}"/>
-                </Label.Foreground>
-            </Label>
-        </Border>
-        <Border Grid.Row="1">
-            <ListView ItemsSource="{Binding Path=Items}" Style="{StaticResource ListViewStyle1}"/>
+    <Grid>
+        <Border Focusable="True">
+            <Border.BorderBrush>
+                <SolidColorBrush x:Name="BorderColor" Color="{StaticResource SecondaryColor}"/>
+            </Border.BorderBrush>
+            <Border.Triggers>
+                <EventTrigger RoutedEvent="Border.GotFocus">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="BorderColor" Storyboard.TargetProperty="Color" From="{StaticResource SecondaryColor}" To="{StaticResource PrimaryColor}" Duration="00:00:01">
+                                <ColorAnimation.EasingFunction>
+                                    <QuinticEase EasingMode="EaseOut"/>
+                                </ColorAnimation.EasingFunction>
+                            </ColorAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Border.LostFocus">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="BorderColor" Storyboard.TargetProperty="Color" To="{StaticResource SecondaryColor}" From="{StaticResource PrimaryColor}" Duration="00:00:01">
+                                <ColorAnimation.EasingFunction>
+                                    <QuinticEase EasingMode="EaseOut"/>
+                                </ColorAnimation.EasingFunction>
+                            </ColorAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Border.Triggers>
+                <Grid x:Name="Root">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0">
+                    <Label FontSize="14" FontFamily="{StaticResource Exo2Regular}" Padding="0" Content="{Binding Label}" Margin="0,0,0,5" Foreground="{Binding ElementName=BorderColor}">
+                    </Label>
+                </Border>
+                <Border Grid.Row="1">
+                    <ListView ItemsSource="{Binding Path=Items}" Style="{StaticResource ListViewStyle1}"/>
+                </Border>
+            </Grid>
         </Border>
     </Grid>
 </UserControl>
