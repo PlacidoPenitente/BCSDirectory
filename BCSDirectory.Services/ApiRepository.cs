@@ -11,9 +11,10 @@ using System.Web.Script.Serialization;
 
 namespace BCSDirectory.Services
 {
-    public class ApiRepository<T> : IApiRepository<T>
+    public class ApiRepository<T> 
+        : IApiRepository<T> where T : class
     {
-        private const string ApiUrl = "bcsdirectoryapi.gear.host/api";
+        private const string ApiUrl = "https://bcsdirectoryapi.gear.host/api";
         public void ApiAdd(T value)
         {
             try
@@ -21,7 +22,7 @@ namespace BCSDirectory.Services
                 var serializer = new JavaScriptSerializer();
                 string jsonString = serializer.Serialize(value);
 
-                var request = (HttpWebRequest)WebRequest.Create(ApiUrl + typeof(T).Name);
+                var request = (HttpWebRequest)WebRequest.Create($"{ApiUrl}/{typeof(T).Name}");
                 request.Method = "POST";
                 request.ContentType = "application/json";
                 request.ContentLength = jsonString.Length;
@@ -57,7 +58,7 @@ namespace BCSDirectory.Services
                 throw;
             }
         }
-
+        
         public IEnumerable<T> ApiGetAll()
         {
             try

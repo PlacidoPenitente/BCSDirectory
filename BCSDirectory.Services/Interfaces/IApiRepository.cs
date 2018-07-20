@@ -8,6 +8,5 @@ namespace BCSDirectory.Services.Interfaces
 {
     public interface IApiRepository<T> : IWriteOnlyApiRepository<T>, IReadOnlyApiRepository<T>
     {
-
     }
 }

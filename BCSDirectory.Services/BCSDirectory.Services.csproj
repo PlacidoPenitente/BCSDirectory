@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BCSDirectory.Services</RootNamespace>
     <AssemblyName>BCSDirectory.Services</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,6 +48,7 @@
     <Compile Include="Interfaces\IApiRepository.cs" />
     <Compile Include="Interfaces\IReadOnlyApiRepository.cs" />
     <Compile Include="Interfaces\IWriteOnlyApiRepository.cs" />
+    <Compile Include="UserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ApiRepository.cs" />
   </ItemGroup>
