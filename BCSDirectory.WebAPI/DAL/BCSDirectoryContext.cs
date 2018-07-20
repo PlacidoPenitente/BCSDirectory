@@ -7,6 +7,7 @@ namespace BCSDirectory.WebAPI.DAL
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Hobby> Hobbies { get; set; }
+        public DbSet<Department> Departments { get; set; }
 
         public BCSDirectoryContext() : base("BCSDirectoryDb")
         {

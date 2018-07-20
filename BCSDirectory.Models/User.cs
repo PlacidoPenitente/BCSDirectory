@@ -17,5 +17,10 @@ namespace BCSDirectory.Models
         public List<Hobby> Hobbies { get; set; } = new List<Hobby>();
         public CivilStatus CivilStatus { get; set; }
         public UserType UserType { get; set; } = UserType.Viewer;
+
+        public string Username { get; set; }
+        public char[] Password { get; set; }
+        public string PasswordHint { get; set; }
+        public Position Position { get; set; }
     }
 }
