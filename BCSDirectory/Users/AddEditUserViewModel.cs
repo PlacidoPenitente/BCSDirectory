@@ -1,6 +1,8 @@
 ﻿using BCSDirectory.Model;
+using BCSDirectory.Services;
 using BCSDirectory.Workspace;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace BCSDirectory.Users
 {
@@ -107,6 +109,15 @@ namespace BCSDirectory.Users
         }
 
         private void Save()
+        {
+            Task.Run(() =>
+            {
+                UserRepository repo = new UserRepository();
+                repo.ApiAdd(User.User);
+            });
+        }
+
+        private async void SaveUser()
         {
 
         }

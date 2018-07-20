@@ -254,6 +254,10 @@
       <Project>{D29299C4-D0A7-4B8D-9EF7-9CB1B1767759}</Project>
       <Name>BCSDirectory.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BCSDirectory.Services\BCSDirectory.Services.csproj">
+      <Project>{33BE57E7-4DC8-405B-9772-60D0CA6574DB}</Project>
+      <Name>BCSDirectory.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

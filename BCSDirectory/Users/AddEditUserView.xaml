@@ -46,7 +46,7 @@
                         <ComboBoxItem Content="Male"/>
                         <ComboBoxItem Content="Female"/>
                     </ComboBox>
-                    <controls:DatePicker Margin="10"/>
+                    <controls:DatePicker Margin="10" Date="{Binding User.Birthdate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <TextBox Text="{Binding User.Address, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" bcsDirectory:AttachedProperties.Label="{StaticResource Address}" Style="{StaticResource TextBox}" AcceptsReturn="True" MaxLines="10" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Margin="10"/>
                     <TextBox Text="{Binding User.PhoneNumber, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" bcsDirectory:AttachedProperties.Label="{StaticResource PhoneNumber}" Style="{StaticResource TextBox}" AcceptsReturn="True" MaxLines="10" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Margin="10"/>
                     <ComboBox SelectedValuePath="Content" Style="{StaticResource ComboBox}" bcsDirectory:AttachedProperties.Label="{StaticResource CivilStatus}" Margin="10" SelectedIndex="0" SelectedValue="{Binding User.CivilStatus, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource StringToCivilStatusConverter}}">
