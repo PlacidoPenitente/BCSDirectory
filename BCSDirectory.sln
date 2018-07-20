@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCSDirectory.WebAPI", "BCSD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCSDirectory.Common", "BCSDirectory.Common\BCSDirectory.Common.csproj", "{B78C780E-4C3B-497B-913E-52390FC50EB5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCSDirectory.Services", "BCSDirectory.Services\BCSDirectory.Services.csproj", "{33BE57E7-4DC8-405B-9772-60D0CA6574DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{B78C780E-4C3B-497B-913E-52390FC50EB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B78C780E-4C3B-497B-913E-52390FC50EB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B78C780E-4C3B-497B-913E-52390FC50EB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33BE57E7-4DC8-405B-9772-60D0CA6574DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33BE57E7-4DC8-405B-9772-60D0CA6574DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33BE57E7-4DC8-405B-9772-60D0CA6574DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33BE57E7-4DC8-405B-9772-60D0CA6574DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
