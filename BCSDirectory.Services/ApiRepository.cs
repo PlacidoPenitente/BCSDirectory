@@ -11,9 +11,10 @@ using System.Web.Script.Serialization;
 
 namespace BCSDirectory.Services
 {
-    public class ApiRepository<T> : IApiRepository<T>
+    public class ApiRepository<T> 
+        : IApiRepository<T> where T : class
     {
-        private const string ApiUrl = "bcsdirectoryapi.gear.host/api";
+        private const string ApiUrl = "https://bcsdirectoryapi.gear.host/api";
         public void ApiAdd(T value)
         {
             try
@@ -57,7 +58,7 @@ namespace BCSDirectory.Services
                 throw;
             }
         }
-
+        
         public IEnumerable<T> ApiGetAll()
         {
             try
