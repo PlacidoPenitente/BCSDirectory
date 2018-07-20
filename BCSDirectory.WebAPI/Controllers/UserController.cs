@@ -98,6 +98,8 @@ namespace BCSDirectory.WebAPI.Controllers
             user.Hobbies.Clear();
             user.Hobbies = hobbies;
 
+            user.Birthdate = new DateTime(user.Birthdate.Year, user.Birthdate.Month, user.Birthdate.Day, 0, 0, 0, DateTimeKind.Utc);
+
             db.Users.Add(user);
             db.SaveChanges();
 

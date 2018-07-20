@@ -259,3 +259,6 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/BCSDirectory.ASPNETMVC/Controllers
+/BCSDirectory.ASPNETMVC/Models
+/BCSDirectory.ASPNETMVC/Views/User
