@@ -22,7 +22,7 @@ namespace BCSDirectory.Services
                 var serializer = new JavaScriptSerializer();
                 string jsonString = serializer.Serialize(value);
 
-                var request = (HttpWebRequest)WebRequest.Create(ApiUrl + typeof(T).Name);
+                var request = (HttpWebRequest)WebRequest.Create($"{ApiUrl}/{typeof(T).Name}");
                 request.Method = "POST";
                 request.ContentType = "application/json";
                 request.ContentLength = jsonString.Length;
