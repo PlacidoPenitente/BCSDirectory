@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,6 +15,7 @@ namespace BCSDirectory.Controls
     {
         public DatePicker()
         {
+
             InitializeComponent();
 
             Root.DataContext = this;
@@ -38,7 +40,6 @@ namespace BCSDirectory.Controls
                 "November",
                 "December"
             };
-            Month = Months[0];
 
             Days = new ObservableCollection<string>();
 
@@ -56,8 +57,6 @@ namespace BCSDirectory.Controls
             {
                 Years.Add((2018 - i) + "");
             }
-
-            Year = Years[0];
         }
 
         public ObservableCollection<string> TwentyEightDays { get; set; }
@@ -212,21 +211,17 @@ namespace BCSDirectory.Controls
             {
                 Days = ThirtyDays;
             }
+
+            if (!Days.Any(x => x.Equals(Day)))
+            {
+                Day = Days[Days.Count - 1];
+            }
         }
 
         public void SetSelectedDate()
         {
-           
-            try
-            {
-                Console.WriteLine(Years.IndexOf(Year) + "/" + int.Parse(Month) + "/" + int.Parse(Day));
-                Date = new DateTime(Years.IndexOf(Year), int.Parse(Month), int.Parse(Day));
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
-            Console.WriteLine(Date);
+            if (String.IsNullOrEmpty(Year) || String.IsNullOrEmpty(Month) || String.IsNullOrEmpty(Day)) return;
+            Date = new DateTime(int.Parse(Year), Months.IndexOf(Month) + 1, int.Parse(Day));
         }
     }
 }
