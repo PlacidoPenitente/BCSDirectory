@@ -1,17 +1,13 @@
 ﻿using BCSDirectory.Services.Interfaces;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 
 namespace BCSDirectory.Services
 {
-    public class ApiRepository<T> 
+    public class ApiRepository<T>
         : IApiRepository<T> where T : class
     {
         private const string ApiUrl = "https://bcsdirectoryapi.gear.host/api";
@@ -58,7 +54,7 @@ namespace BCSDirectory.Services
                 throw;
             }
         }
-        
+
         public IEnumerable<T> ApiGetAll()
         {
             try
