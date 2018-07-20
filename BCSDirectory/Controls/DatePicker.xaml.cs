@@ -55,7 +55,7 @@ namespace BCSDirectory.Controls
 
             for (int i = 0; i < 150; i++)
             {
-                Years.Add((2018 - i) + "");
+                Years.Add((DateTime.Now.Year - i) + "");
             }
         }
 

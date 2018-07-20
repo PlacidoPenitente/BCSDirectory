@@ -116,10 +116,5 @@ namespace BCSDirectory.Users
                 repo.ApiAdd(User.User);
             });
         }
-
-        private async void SaveUser()
-        {
-
-        }
     }
 }
