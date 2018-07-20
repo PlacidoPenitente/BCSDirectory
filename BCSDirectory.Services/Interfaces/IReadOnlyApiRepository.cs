@@ -8,7 +8,7 @@ namespace BCSDirectory.Services.Interfaces
 {
     public interface IReadOnlyApiRepository<out T>
     {
-        T ApiFind(int id);
+        T ApiFind(int? id);
         IEnumerable<T> ApiGetAll();
     }
 }

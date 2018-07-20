@@ -5,17 +5,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 
 namespace BCSDirectory.Services
 {
-    public class ApiRepository<T> 
+    public abstract class ApiRepository<T> 
         : IApiRepository<T> where T : class
     {
         private const string ApiUrl = "https://bcsdirectoryapi.gear.host/api";
-        public void ApiAdd(T value)
+        public virtual void ApiAdd(T value)
         {
             try
             {
@@ -43,8 +44,8 @@ namespace BCSDirectory.Services
                 throw;
             }
         }
-
-        public T ApiFind(int id)
+        
+        public virtual T ApiFind(int? id)
         {
             try
             {
@@ -59,7 +60,7 @@ namespace BCSDirectory.Services
             }
         }
         
-        public IEnumerable<T> ApiGetAll()
+        public virtual IEnumerable<T> ApiGetAll()
         {
             try
             {
@@ -74,7 +75,7 @@ namespace BCSDirectory.Services
             }
         }
 
-        public void ApiUpdate(int id, T value)
+        public virtual void ApiUpdate(int? id, T value)
         {
             try
             {
@@ -95,6 +96,26 @@ namespace BCSDirectory.Services
                 using (var stream = new StreamReader(httpResponse.GetResponseStream()))
                 {
                     stream.ReadToEnd();
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public void ApiDelete(int? id)
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("http://localhost:1379/");
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    using (var response = client.DeleteAsync($"{ApiUrl}/{typeof(T)}/{id}").Result)
+                    {
+
+                    }
                 }
             }
             catch

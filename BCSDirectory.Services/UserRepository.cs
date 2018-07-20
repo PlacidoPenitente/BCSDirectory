@@ -8,6 +8,6 @@ using System.Threading.Tasks;
 namespace BCSDirectory.Services
 {
     public class UserRepository : ApiRepository<User>
-    {
+    {   
     }
 }

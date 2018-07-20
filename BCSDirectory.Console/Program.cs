@@ -18,44 +18,44 @@ namespace BCSDirectory.Console
             try
             {
                 //userRepository = new UserRepository();
-                User usee = new User()
-                {
-                    FirstName = "Rodney",
-                    MiddleName = "P",
-                    LastName = "Buendia",
-                    Birthdate = DateTime.Now,
-                    Address = "Doon, Lang",
-                    CivilStatus = CivilStatus.Single,
-                    PhoneNumber = "09123456789",
-                    Gender = Gender.Male,
-                    UserType = UserType.Editor,
-                    Hobbies = new List<Hobby>()
-                    {
-                        new Hobby() {Name = "Hiking"},
-                        new Hobby() {Name = "Music"}
-                    }
-                };
+                //User usee = new User()
+                //{
+                //    FirstName = "Rodney",
+                //    MiddleName = "P",
+                //    LastName = "Buendia",
+                //    Birthdate = DateTime.Now,
+                //    Address = "Doon, Lang",
+                //    CivilStatus = CivilStatus.Single,
+                //    PhoneNumber = "09123456789",
+                //    Gender = Gender.Male,
+                //    UserType = UserType.Editor,
+                //    Hobbies = new List<Hobby>()
+                //    {
+                //        new Hobby() {Name = "Hiking"},
+                //        new Hobby() {Name = "Music"}
+                //    }
+                //};
 
-                var serializer = new JavaScriptSerializer();
-                string jsonString = serializer.Serialize(usee);
+                //var serializer = new JavaScriptSerializer();
+                //string jsonString = serializer.Serialize(usee);
 
-                string ApiUrl = "http://localhost:51701/api";
+                //string ApiUrl = "http://localhost:51701/api";
 
-                var request = (HttpWebRequest)WebRequest.Create($"{ApiUrl}/{typeof(User).Name}");
-                request.Method = "POST";
-                request.ContentType = "application/json";
-                request.ContentLength = jsonString.Length;
+                //var request = (HttpWebRequest)WebRequest.Create($"{ApiUrl}/{typeof(User).Name}");
+                //request.Method = "POST";
+                //request.ContentType = "application/json";
+                //request.ContentLength = jsonString.Length;
 
-                using (var stream = new StreamWriter(request.GetRequestStream()))
-                {
-                    stream.Write(jsonString);
-                }
+                //using (var stream = new StreamWriter(request.GetRequestStream()))
+                //{
+                //    stream.Write(jsonString);
+                //}
 
-                var httpResponse = (HttpWebResponse)request.GetResponse();
-                using (var stream = new StreamReader(httpResponse.GetResponseStream()))
-                {
-                    stream.ReadToEnd();
-                }
+                //var httpResponse = (HttpWebResponse)request.GetResponse();
+                //using (var stream = new StreamReader(httpResponse.GetResponseStream()))
+                //{
+                //    stream.ReadToEnd();
+                //}
 
                 //System.Console.WriteLine("End Insertion... Start Reading...");
 
