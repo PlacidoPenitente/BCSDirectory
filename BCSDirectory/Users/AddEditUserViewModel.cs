@@ -1,7 +1,10 @@
 ﻿using BCSDirectory.Model;
+using BCSDirectory.Models;
 using BCSDirectory.Services;
 using BCSDirectory.Workspace;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace BCSDirectory.Users
@@ -28,64 +31,16 @@ namespace BCSDirectory.Users
 
         #endregion
 
-        #region ItemsProperty
+        #region HobbiesProperty
 
-        private ObservableCollection<string> _items;
+        private ObservableCollection<string> _hobbies;
 
-        public ObservableCollection<string> Items
+        public ObservableCollection<string> Hobbies
         {
-            get => _items;
+            get => _hobbies;
             set
             {
-                _items = value;
-                OnPropertyChanged();
-            }
-        }
-
-        #endregion
-
-        #region MonthProperty
-
-        private string _month;
-
-        public string Month
-        {
-            get => _month;
-            set
-            {
-                _month = value;
-                OnPropertyChanged();
-            }
-        }
-
-        #endregion
-
-        #region DayProperty
-
-        private string _day;
-
-        public string Day
-        {
-            get => _day;
-            set
-            {
-                _day = value;
-                OnPropertyChanged();
-            }
-        }
-
-        #endregion
-
-        #region YearProperty
-
-        private string _year;
-
-        public string Year
-        {
-            get => _year;
-            set
-            {
-                _year = value;
+                _hobbies = value;
                 OnPropertyChanged();
             }
         }
@@ -99,7 +54,7 @@ namespace BCSDirectory.Users
             IconName = "Create";
 
             User = userFacade;
-            Items = new ObservableCollection<string>();
+            Hobbies = new ObservableCollection<string>(User.Hobbies.Select(x => x.Name));
             SaveCommand = new DelegateCommand(Save);
         }
 
@@ -110,6 +65,7 @@ namespace BCSDirectory.Users
 
         private void Save()
         {
+            User.Hobbies = new List<Hobby>(Hobbies.Select(x => new Hobby() { Name = x }));
             Task.Run(() =>
             {
                 UserRepository repo = new UserRepository();
