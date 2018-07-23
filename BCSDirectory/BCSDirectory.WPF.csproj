@@ -80,7 +80,6 @@
     <Compile Include="Converter\PositiveToNegativeConverter.cs" />
     <Compile Include="Converter\StringToCivilStatusConverter.cs" />
     <Compile Include="Converter\StringToGenderConverter.cs" />
-    <Compile Include="Converter\StringToHobbyConverter.cs" />
     <Compile Include="Converter\StringToImageConverter.cs" />
     <Compile Include="Converter\StringToUserTypeConverter.cs" />
     <Compile Include="DelegateCommand.cs" />

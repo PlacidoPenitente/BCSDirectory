@@ -7,7 +7,7 @@
              xmlns:bcsDirectory="clr-namespace:BCSDirectory"
              xmlns:controls="clr-namespace:BCSDirectory.Controls"
              mc:Ignorable="d" 
-             d:DesignHeight="2000" d:DesignWidth="800"
+             d:DesignHeight="768" d:DesignWidth="800"
              x:Name="UserControl">
     <UserControl.RenderTransform>
         <TranslateTransform x:Name="TranslateTransform"/>
@@ -53,17 +53,8 @@
                         <ComboBoxItem Content="Single"/>
                         <ComboBoxItem Content="Married"/>
                     </ComboBox>
-                    <controls:MultiInput Margin="10" Label="{StaticResource HobbiesAndInterests}" Items="{Binding Hobbies}"/>
+                    <controls:MultiInput Margin="10" Label="{StaticResource HobbiesAndInterests}" Items="{Binding Items}"/>
                     <ComboBox SelectedValuePath="Content" Style="{StaticResource ComboBox}" bcsDirectory:AttachedProperties.Label="{StaticResource UserType}" Margin="10" SelectedIndex="0" SelectedValue="{Binding User.UserType, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource StringToUserTypeConverter}}">
-                        <ComboBoxItem Content="Viewer"/>
-                        <ComboBoxItem Content="Employee"/>
-                        <ComboBoxItem Content="Editor"/>
-                    </ComboBox>
-                    <TextBox Style="{StaticResource TextBox}" Margin="10" bcsDirectory:AttachedProperties.Label="{StaticResource Username}"/>
-                    <TextBox Style="{StaticResource TextBox}" Margin="10" bcsDirectory:AttachedProperties.Label="{StaticResource Password}"/>
-                    <TextBox Style="{StaticResource TextBox}" Margin="10" bcsDirectory:AttachedProperties.Label="{StaticResource ConfirmPassword}"/>
-                    <TextBox Style="{StaticResource TextBox}" Margin="10" bcsDirectory:AttachedProperties.Label="{StaticResource PasswordHint}"/>
-                    <ComboBox SelectedValuePath="Content" Style="{StaticResource ComboBox}" bcsDirectory:AttachedProperties.Label="{StaticResource Position}" Margin="10" SelectedIndex="0" SelectedValue="{Binding User.UserType, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource StringToUserTypeConverter}}">
                         <ComboBoxItem Content="Viewer"/>
                         <ComboBoxItem Content="Employee"/>
                         <ComboBoxItem Content="Editor"/>
