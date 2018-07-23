@@ -7,4 +7,5 @@
     <converter:StringToGenderConverter x:Key="StringToGenderConverter"/>
     <converter:StringToCivilStatusConverter x:Key="StringToCivilStatusConverter"/>
     <converter:StringToUserTypeConverter x:Key="StringToUserTypeConverter"/>
+    <converter:StringToHobbyConverter x:Key="StringToHobbyConverter"/>
 </ResourceDictionary>
