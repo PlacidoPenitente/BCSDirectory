@@ -1,6 +1,7 @@
 ﻿using BCSDirectory.Models;
 using BCSDirectory.Models.Enums;
 using System;
+using System.Collections.Generic;
 
 namespace BCSDirectory.Model
 {
@@ -141,6 +142,22 @@ namespace BCSDirectory.Model
 
         #endregion
 
+        //Hobbies property from User model.
+
+        #region HobbiesProperty
+
+        public List<Hobby> Hobbies
+        {
+            get => User.Hobbies;
+            set
+            {
+                User.Hobbies = value;
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion
+
         //UserType property from User model.
 
         #region UserTypeProperty
@@ -151,6 +168,70 @@ namespace BCSDirectory.Model
             set
             {
                 User.UserType = value;
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion
+
+        //Username property from User model.
+
+        #region UsernameProperty
+
+        public string Username
+        {
+            get => User.Username;
+            set
+            {
+                User.Username = value;
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion
+
+        //Password property from User model.
+
+        #region PasswordProperty
+
+        public string Password
+        {
+            get => new String(User.Password);
+            set
+            {
+                User.Password = value.ToCharArray();
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion
+
+        //PasswordHint property from User model.
+
+        #region PasswordHintProperty
+
+        public string PasswordHint
+        {
+            get => User.PasswordHint;
+            set
+            {
+                User.PasswordHint = value;
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion
+
+        //Position property from User model.
+
+        #region PositionProperty
+
+        public Position Position
+        {
+            get => User.Position;
+            set
+            {
+                User.Position = value;
                 OnPropertyChanged();
             }
         }
